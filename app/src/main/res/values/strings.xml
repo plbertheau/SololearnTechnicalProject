@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SololearnTechnicalProject</string>
+    <string name="no_internet_connexion">No internet connection</string>
+    <string name="no_internet_connection_error">It looks like you\'re not connected to the internet. Check your connection and try again.</string>
+    <string name="functionality_temporary_not_available">This service is temporarily unavailable</string>
+    <string name="server_not_responding_error">We\'ve run into an issue, we\'re sorry! It happens. It should be working again soon. Thank you for your patience.</string>
+    <string name="no_results_error_message">There is no result for this search. Change your criteria and try again.</string>
+</resources>

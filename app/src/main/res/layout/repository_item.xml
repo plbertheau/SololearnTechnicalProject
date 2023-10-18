@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="repo"
+            type="com.sample.sololearntechnicalproject.model.GitHubRepositoryModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/number_of_star_field"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            tools:src="@mipmap/ic_launcher"
+            android:src="@drawable/github_stars"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/field_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/number_of_star"/>
+
+        <TextView
+            android:id="@+id/number_of_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            tools:text="1600"
+            android:text="@{Integer.toString(repo.numberOfStar)}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/field_name"
+            app:layout_constraintStart_toEndOf="@id/number_of_star_field"
+            app:layout_constraintEnd_toStartOf="@+id/text_stars"/>
+
+        <TextView
+            android:id="@+id/text_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="stars"
+            android:text="stars"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/field_name"
+            app:layout_constraintStart_toEndOf="@id/number_of_star"/>
+
+        <TextView
+            android:id="@+id/field_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Name : "
+            android:text="Name : "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/number_of_star"
+            app:layout_constraintEnd_toStartOf="@+id/name"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Inception"
+            android:text="@{repo.repositoryName}"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/number_of_star"
+            app:layout_constraintStart_toStartOf="@id/field_name" />
+
+        <TextView
+            android:id="@+id/field_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description : "
+            tools:text="description : "
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/description"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{repo.repositoryDescription}"
+            tools:text="this is the best movie ever i watched"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/field_description"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
