@@ -44,7 +44,7 @@ class ListRepoViewModel @Inject constructor(
                                 )
                             withContext(Dispatchers.Main) {
                                 response.body()!![indice].numberOfStar =
-                                    detailResponse.body()!!.numberOfStar
+                                    detailResponse.body()?.numberOfStar ?: 0
                             }
                         }
                     }

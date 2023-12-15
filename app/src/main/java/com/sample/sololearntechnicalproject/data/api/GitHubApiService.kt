@@ -11,13 +11,13 @@ interface GitHubApiService {
 
     @Headers(
         "Accept: application/vnd.github+json",
-        "Authorization: token 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"
+        "Authorization: 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"
     )
     @GET("/repositories")
     suspend fun fetchGitHubRepositories(): Response<List<GitHubRepositoryModel>>
 
     @Headers("Accept: application/vnd.github+json",
-        "Authorization: token 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")
+        "Authorization: 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")
     @GET("/repos/{owner}/{repo}")
     suspend fun fetchDetailRepository(
         @Path("owner") owner: String,
