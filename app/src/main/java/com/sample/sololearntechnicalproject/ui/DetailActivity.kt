@@ -37,34 +37,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
-
-    /*private lateinit var repositoryDetailActivityBinding: RepositoryDetailActivityBinding*/
+    
     private lateinit var viewModel: DetailRepoViewModel
-
-    /*override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val model = intent.getParcelableExtra("REPO") as GitHubRepositoryModel?
-        repositoryDetailActivityBinding = RepositoryDetailActivityBinding.inflate(layoutInflater)
-        setContentView(repositoryDetailActivityBinding.root)
-
-        setUpViewModel()
-
-        viewModel.responseContainer.observe(this) {
-            it?.let { repo ->
-                repositoryDetailActivityBinding.repo = repo
-                repositoryDetailActivityBinding.goToGithubPage.setOnClickListener {
-                    goToGitHubPage(repo.url)
-                }
-            }
-        }
-
-        viewModel.errorMessage.observe(this) {
-            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-        }
-
-        viewModel.fetchDetail(model)
-    }*/
-
 
     private fun setUpViewModel() {
         viewModel = ViewModelProvider(this)[DetailRepoViewModel::class.java]
